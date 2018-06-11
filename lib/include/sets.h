@@ -1,3 +1,6 @@
+// Written By Naveen Venkat
+// nav.naveenvenkat@gmail.com
+
 #ifndef __SETS_H_API
 #define __SETS_H_API
 
@@ -10,6 +13,7 @@
 struct _SET
 {
     _SET_SIZE_TYPE size;
+    _SET_SIZE_TYPE count;
     int multi;
     _SET_ELEM_TYPE * elems;
 };

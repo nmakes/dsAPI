@@ -1,3 +1,6 @@
+// Written By Naveen Venkat
+// nav.naveenvenkat@gmail.com
+
 #ifndef __HASHTABLE_H_API
 #define __HASHTABLE_H_API
 

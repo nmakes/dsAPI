@@ -1,10 +1,14 @@
-#include "sets.h"
+// Written By Naveen Venkat
+// nav.naveenvenkat@gmail.com
+
+#include "../include/sets.h"
 
 set setMake(_SET_SIZE_TYPE size, int multi)
 {
     set s = (set) malloc(sizeof(struct _SET));
     s->size = size;
     s->multi = multi;
+    s->count = 0;
     s->elems = (_SET_ELEM_TYPE*) malloc(sizeof(_SET_ELEM_TYPE)*size);
     return s;
 }
@@ -63,6 +67,7 @@ int setAdd(set s, _SET_SIZE_TYPE elem)
             if(s->multi==1)
             {
                 s->elems[elem]++;
+                s->count++;
             }
             else
             {
@@ -93,14 +98,17 @@ int setDel(set s, _SET_SIZE_TYPE elem)
                 if (s->elems[elem]>1)
                 {
                     s->elems[elem]--;
+                    s->count--;
                 }
                 else
                 {
+                    s->count--;
                     s->elems[elem]=0;
                 }
             }
             else
             {
+                s->count--;
                 s->elems[elem] = 0;
             }
         }
